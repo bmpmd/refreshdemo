@@ -1,0 +1,30 @@
+<p>
+    <mat-toolbar color="primary">
+
+        <span>
+            <button mat-icon-button  [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false">
+                <a *ngIf="!isAuth" mat-menu-item routerLink="/welcome">
+                    <mat-icon>home</mat-icon>
+                    <span>Home</span>
+                </a>
+                <a *ngIf="!isAuth" mat-menu-item routerLink="/login"> 
+                    <mat-icon>people_outline</mat-icon>
+                    <span>Login</span>
+                </a>
+                <a *ngIf="isAuth" mat-menu-item (click)="logout()" > 
+                    <mat-icon>people_outline</mat-icon>
+                    <span>Logout</span>
+                </a>
+
+            </mat-menu>
+        </span>
+
+
+        <span> Okta Demo</span>
+
+
+    </mat-toolbar>
+</p>
